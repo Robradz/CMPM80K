@@ -22,7 +22,7 @@ extents = Vector2( 535.682, 13.2624 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 18.6002, 308.759 )
 
-[sub_resource type="PhysicsMaterial" id=8]
+[sub_resource type="PhysicsMaterial" id=6]
 friction = 0.0
 bounce = 1.0
 
@@ -72,10 +72,11 @@ script = ExtResource( 3 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Paddle"]
-physics_material_override = SubResource( 8 )
+physics_material_override = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle/StaticBody2D"]
 shape = SubResource( 7 )
 
 [node name="Brick" parent="." instance=ExtResource( 4 )]
-position = Vector2( 445.523, 106.971 )
+position = Vector2( 260.51, 311.388 )
+scale = Vector2( 1.32813, 0.251524 )
