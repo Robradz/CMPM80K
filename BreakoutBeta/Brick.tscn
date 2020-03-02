@@ -1,14 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://brick.png" type="Texture" id=1]
+[ext_resource path="res://RedTrash (2).png" type="Texture" id=1]
 [ext_resource path="res://Brick.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.9699, 11.3079 )
+extents = Vector2( 50.19, 31.6126 )
 
 [node name="Brick" type="Sprite"]
-position = Vector2( 53.5, 194.5 )
-scale = Vector2( 1.32813, 0.265625 )
+position = Vector2( 72.7266, 197.743 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
@@ -17,8 +16,10 @@ script = ExtResource( 2 )
 [node name="BrickBody" type="StaticBody2D" parent="Area2D"]
 
 [node name="BrickShape2" type="CollisionShape2D" parent="Area2D/BrickBody"]
+position = Vector2( -0.12748, -0.577744 )
 shape = SubResource( 1 )
 
 [node name="BrickShape" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.12748, -0.577744 )
 shape = SubResource( 1 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
