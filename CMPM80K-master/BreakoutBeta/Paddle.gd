@@ -18,3 +18,7 @@ func _process(delta):
 		direction = 0
 	motion = Vector2(direction,0)*speed*delta
 	move_and_collide(motion)
+	if(get_global_position().x > get_viewport_rect().size.x - get_node("Boat").get_texture().get_size().x / 2):
+		set_global_position(Vector2(get_viewport_rect().size.x - get_node("Boat").get_texture().get_size().x / 2, get_global_position().y))
+	elif(get_global_position().x < get_node("Boat").get_texture().get_size().x / 2):
+		set_global_position(Vector2(get_node("Boat").get_texture().get_size().x / 2, get_global_position().y))

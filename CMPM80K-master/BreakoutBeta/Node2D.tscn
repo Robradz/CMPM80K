@@ -28,8 +28,9 @@ extents = Vector2( 18.6002, 308.759 )
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 50.2817, 7.96295 )
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 17.539
+height = 62.1479
 
 [node name="world" type="Node2D"]
 script = ExtResource( 6 )
@@ -68,7 +69,7 @@ shape = SubResource( 5 )
 position = Vector2( 516.942, 521.023 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Paddle"]
+[node name="Boat" type="Sprite" parent="Paddle"]
 position = Vector2( 20.5661, -6.96593 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 2 )
@@ -77,6 +78,8 @@ texture = ExtResource( 2 )
 physics_material_override = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle/StaticBody2D"]
+position = Vector2( 0, 8 )
+rotation = 1.5708
 shape = SubResource( 7 )
 
 [node name="Brick" parent="." instance=ExtResource( 4 )]
@@ -224,7 +227,7 @@ position = Vector2( 176.851, 50 )
 scale = Vector2( 1, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 507.472, 260.968 )
+position = Vector2( 511.127, 250.883 )
 scale = Vector2( 10.5, 10.5 )
 z_index = -2
 texture = ExtResource( 5 )
