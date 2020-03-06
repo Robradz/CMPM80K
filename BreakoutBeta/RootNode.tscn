@@ -1,0 +1,322 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ball.png" type="Texture" id=2]
+[ext_resource path="res://Ocean.png" type="Texture" id=3]
+[ext_resource path="res://RedTrash (2).png" type="Texture" id=4]
+[ext_resource path="res://pixil-frame-0.png" type="Texture" id=5]
+[ext_resource path="res://StartMenu.png" type="Texture" id=6]
+[ext_resource path="res://Brick.gd" type="Script" id=7]
+[ext_resource path="res://Paddle.gd" type="Script" id=8]
+[ext_resource path="res://StartMenu.gd" type="Script" id=9]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.2234, 10.1852 )
+
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 535.682, 13.2624 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 18.6002, 308.759 )
+
+[sub_resource type="PhysicsMaterial" id=6]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 50.2817, 7.96295 )
+
+[node name="RootNode" type="Node"]
+
+[node name="Main" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Ocean" type="Sprite" parent="Main"]
+position = Vector2( 516.873, 277.953 )
+scale = Vector2( 11, 11 )
+texture = ExtResource( 3 )
+
+[node name="StartMenu" type="Sprite" parent="Main"]
+position = Vector2( 494.478, 384.379 )
+scale = Vector2( 11, 11 )
+texture = ExtResource( 6 )
+
+[node name="world" type="Node2D" parent="."]
+
+[node name="Ball" type="RigidBody2D" parent="world"]
+position = Vector2( 298.46, 279.446 )
+mass = 0.01
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+linear_velocity = Vector2( 200, 200 )
+linear_damp = 0.0
+
+[node name="Sprite" type="Sprite" parent="world/Ball"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/Ball"]
+shape = SubResource( 2 )
+
+[node name="Walls" type="StaticBody2D" parent="world"]
+physics_material_override = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/Walls"]
+position = Vector2( 511.322, -11.9356 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="world/Walls"]
+position = Vector2( 517.08, 614.731 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="world/Walls"]
+position = Vector2( -18.1751, 295.719 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="world/Walls"]
+position = Vector2( 1043.36, 294.826 )
+shape = SubResource( 5 )
+
+[node name="Paddle" type="KinematicBody2D" parent="world"]
+position = Vector2( 516.942, 521.023 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="world/Paddle"]
+position = Vector2( 20.5661, -6.96593 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="world/Paddle"]
+physics_material_override = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world/Paddle/StaticBody2D"]
+shape = SubResource( 7 )
+
+[node name="Brick" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 66.2646, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick2" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 964.511, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick3" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 850.239, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick4" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 737.328, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick5" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 624.416, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick6" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 512, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick7" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 400.926, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick8" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 289.181, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick9" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 176.851, 200 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick18" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 66.2646, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick17" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 964.511, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick16" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 850.239, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick15" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 737.328, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick14" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 624.416, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick13" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 512, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick12" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 400.926, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick11" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 289.181, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick10" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 176.851, 150 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick27" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 66.2646, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick26" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 964.511, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick25" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 850.239, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick24" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 737.328, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick23" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 624.416, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick22" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 512, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick21" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 400.926, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick20" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 289.181, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick19" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 176.851, 100 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick36" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 66.2646, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick35" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 964.511, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick34" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 850.239, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick33" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 737.328, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick32" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 624.416, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick31" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 512, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick30" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 400.926, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick29" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 289.181, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Brick28" type="Sprite" parent="world" instance=ExtResource( 1 )]
+position = Vector2( 176.851, 50 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="world"]
+position = Vector2( 507.472, 260.968 )
+scale = Vector2( 10.5, 10.5 )
+z_index = -2
+texture = ExtResource( 3 )

@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ball.png" type="Texture" id=1]
 [ext_resource path="res://pixil-frame-0.png" type="Texture" id=2]
 [ext_resource path="res://Paddle.gd" type="Script" id=3]
 [ext_resource path="res://Brick.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ocean.png" type="Texture" id=5]
+[ext_resource path="res://MainGame.gd" type="Script" id=6]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -31,9 +32,10 @@ bounce = 1.0
 extents = Vector2( 50.2817, 7.96295 )
 
 [node name="world" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Ball" type="RigidBody2D" parent="."]
-position = Vector2( 503.877, 268.563 )
+position = Vector2( 298.46, 279.446 )
 mass = 0.01
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
@@ -81,34 +83,151 @@ physics_material_override = SubResource( 6 )
 shape = SubResource( 7 )
 
 [node name="Brick" parent="." instance=ExtResource( 4 )]
-position = Vector2( 54.4175, 179.406 )
+position = Vector2( 66.2646, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 964.511, 180.767 )
+position = Vector2( 964.511, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 850.239, 180.767 )
+position = Vector2( 850.239, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 737.328, 180.767 )
+position = Vector2( 737.328, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 624.416, 180.767 )
+position = Vector2( 624.416, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 510.144, 179.406 )
+position = Vector2( 512, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 398.593, 178.046 )
+position = Vector2( 400.926, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 285.682, 179.406 )
+position = Vector2( 289.181, 200 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Brick9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 172.77, 179.406 )
+position = Vector2( 176.851, 200 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 66.2646, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 964.511, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 850.239, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 737.328, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 624.416, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 400.926, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 289.181, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176.851, 150 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 66.2646, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 964.511, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 850.239, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 737.328, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 624.416, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 400.926, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 289.181, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176.851, 100 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick36" parent="." instance=ExtResource( 4 )]
+position = Vector2( 66.2646, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick35" parent="." instance=ExtResource( 4 )]
+position = Vector2( 964.511, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick34" parent="." instance=ExtResource( 4 )]
+position = Vector2( 850.239, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick33" parent="." instance=ExtResource( 4 )]
+position = Vector2( 737.328, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick32" parent="." instance=ExtResource( 4 )]
+position = Vector2( 624.416, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick31" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 400.926, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 289.181, 50 )
+scale = Vector2( 1, 0.5 )
+
+[node name="Brick28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176.851, 50 )
+scale = Vector2( 1, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 520.43, 264.975 )
+position = Vector2( 507.472, 260.968 )
 scale = Vector2( 10.5, 10.5 )
 z_index = -2
 texture = ExtResource( 5 )
