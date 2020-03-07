@@ -82,6 +82,12 @@ position = Vector2( 0, 8 )
 rotation = 1.5708
 shape = SubResource( 7 )
 
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 511.127, 250.883 )
+scale = Vector2( 10.5, 10.5 )
+z_index = -2
+texture = ExtResource( 5 )
+
 [node name="Brick" parent="." instance=ExtResource( 4 )]
 position = Vector2( 66.2646, 200 )
 scale = Vector2( 1, 0.5 )
@@ -225,9 +231,3 @@ scale = Vector2( 1, 0.5 )
 [node name="Brick28" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176.851, 50 )
 scale = Vector2( 1, 0.5 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 511.127, 250.883 )
-scale = Vector2( 10.5, 10.5 )
-z_index = -2
-texture = ExtResource( 5 )

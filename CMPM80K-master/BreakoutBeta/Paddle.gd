@@ -1,5 +1,5 @@
 extends KinematicBody2D
-var speed = 500;
+var speed = 400;
 var direction = 0
   # left or right on the x axisvar direction = 0
 
