@@ -13,5 +13,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(get_node("../Ball").num_lives == 1):
+	if(get_node("../../Ball").num_lives == 1):
 		queue_free()
