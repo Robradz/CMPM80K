@@ -1,4 +1,10 @@
-extends Node2D
+extends Sprite
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,5 +13,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(Input.is_action_pressed("ui_accept")):
-		get_tree().change_scene("res://Node2D.tscn")
+	if(get_node("../Ball").num_lives == 1):
+		queue_free()
